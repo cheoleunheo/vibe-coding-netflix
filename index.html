@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>넷플릭스 스타일 영화 정보</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">VibeFlix</div>
+        <nav class="nav">
+            <button class="nav__link" data-section="now-playing">상영중</button>
+            <button class="nav__link" data-section="popular">인기</button>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section id="now-playing" class="section">
+            <h2 class="section__title">상영 중인 영화</h2>
+            <div class="row" id="row-now-playing" aria-live="polite"></div>
+        </section>
+
+        <section id="popular" class="section">
+            <h2 class="section__title">인기 있는 영화</h2>
+            <div class="row" id="row-popular" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <template id="card-template">
+        <article class="card" tabindex="0">
+            <div class="card__poster-wrap">
+                <img class="card__poster" alt="" loading="lazy" />
+            </div>
+            <div class="card__meta">
+                <h3 class="card__title"></h3>
+                <p class="card__genres"></p>
+            </div>
+        </article>
+    </template>
+
+    <footer class="footer">Data provided by TMDB</footer>
+
+    <script src="app.js" type="module"></script>
+</body>
+</html>
+
