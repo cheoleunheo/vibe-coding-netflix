@@ -13,20 +13,38 @@
     <header class="header">
         <div class="logo">VibeFlix</div>
         <nav class="nav">
-            <button class="nav__link" data-section="now-playing">상영중</button>
-            <button class="nav__link" data-section="popular">인기</button>
+            <button id="nav-now" class="nav__link" data-section="now-playing">상영중</button>
+            <button id="nav-popular" class="nav__link" data-section="popular">인기</button>
+            <button id="nav-upcoming" class="nav__link" data-section="upcoming">개봉예정</button>
+            <div class="lang">
+                <label for="language-select" class="sr-only">언어 선택</label>
+                <select id="language-select" aria-label="언어 선택">
+                    <option value="ko-KR|KR">한국어 (KR)</option>
+                    <option value="en-US|US">English (US)</option>
+                    <option value="ja-JP|JP">日本語 (JP)</option>
+                    <option value="es-ES|ES">Español (ES)</option>
+                    <option value="zh-CN|CN">中文 (简体, CN)</option>
+                    <option value="ar-SA|SA">العربية (SA)</option>
+                    <option value="fr-FR|FR">Français (FR)</option>
+                </select>
+            </div>
         </nav>
     </header>
 
     <main class="main">
         <section id="now-playing" class="section">
-            <h2 class="section__title">상영 중인 영화</h2>
+            <h2 id="title-now" class="section__title">상영 중인 영화</h2>
             <div class="row" id="row-now-playing" aria-live="polite"></div>
         </section>
 
         <section id="popular" class="section">
-            <h2 class="section__title">인기 있는 영화</h2>
+            <h2 id="title-popular" class="section__title">인기 있는 영화</h2>
             <div class="row" id="row-popular" aria-live="polite"></div>
+        </section>
+
+        <section id="upcoming" class="section">
+            <h2 id="title-upcoming" class="section__title">개봉 예정 영화</h2>
+            <div class="row" id="row-upcoming" aria-live="polite"></div>
         </section>
     </main>
 
@@ -37,6 +55,7 @@
             </div>
             <div class="card__meta">
                 <h3 class="card__title"></h3>
+                <p class="card__date"></p>
                 <p class="card__genres"></p>
             </div>
         </article>
